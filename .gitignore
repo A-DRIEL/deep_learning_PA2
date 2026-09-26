@@ -1,0 +1,6 @@
+data/raw/
+.venv/
+outputs/*.pt
+outputs/*.mp4
+__pycache__/
+*.pyc
