@@ -13,6 +13,9 @@ from src.datasets.synthetic_video import generate_video
 from src.tracking.naive_tracker import NaiveTracker
 from src.metrics.tracking_metrics import compute_idf1, count_id_switches, compute_iou
 from src.datasets.detector_simulator import simulate_detections
+from src.viz.plot_style import apply_style
+apply_style()
+
 
 Path("outputs").mkdir(exist_ok=True)
 

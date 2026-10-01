@@ -20,6 +20,9 @@ import matplotlib.pyplot as plt
 from src.datasets.mot17 import MOT17Sequence, SEQUENCE_IDS
 from src.tracking.naive_tracker import NaiveTracker
 from src.metrics.tracking_metrics import compute_idf1, count_id_switches, compute_iou
+from src.viz.plot_style import apply_style
+apply_style()
+
 
 Path("outputs").mkdir(exist_ok=True)
 

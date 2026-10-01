@@ -2,6 +2,7 @@ data/raw/
 .venv/
 outputs/*.pt
 outputs/*.mp4
+outputs/**/*.pt
 __pycache__/
 *.pyc
 
