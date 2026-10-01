@@ -4,3 +4,5 @@ outputs/*.pt
 outputs/*.mp4
 __pycache__/
 *.pyc
+
+data/raw/

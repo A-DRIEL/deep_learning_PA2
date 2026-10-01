@@ -6,6 +6,7 @@ dependencies = [
     "numpy",
     "scipy",
     "scikit-learn",
+    "scikit-image",
     "matplotlib",
     "opencv-python",
     "albumentations",
