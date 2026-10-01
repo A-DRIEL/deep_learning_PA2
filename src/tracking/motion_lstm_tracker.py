@@ -41,6 +41,9 @@ class MotionLSTMTracker:
         self.hidden_before_predict = {}  # id -> (h, c) ANTES da extrapolação do quadro atual
         self.age = {}
         self.history = {}              # id -> {frame: box pixel yxyx}, para avaliação
+        # Caixa que a recorrência propôs antes de observar as detecções do quadro.
+        # Mantida separada de history para permitir inspecionar o mapa intermediário.
+        self.predicted_history = {}    # id -> {frame: box pixel yxyx}
 
     @torch.no_grad()
     def _predict_next(self, track_id):
@@ -60,6 +63,8 @@ class MotionLSTMTracker:
         predicted = {}
         for tid in track_ids:
             predicted[tid] = self._predict_next(tid)
+            box_pixel = norm_cxcywh_to_pixel_yxyx(predicted[tid], self.img_w, self.img_h)
+            self.predicted_history.setdefault(tid, {})[frame_idx] = box_pixel
 
         dets_norm = [pixel_to_norm_cxcywh(d, self.img_w, self.img_h) for d in detections_pixel]
 
