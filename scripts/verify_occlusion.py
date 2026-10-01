@@ -3,6 +3,8 @@ from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
 from src.datasets.synthetic_video import generate_video
+from src.viz.plot_style import apply_style
+apply_style()
 
 Path("outputs").mkdir(exist_ok=True)
 
