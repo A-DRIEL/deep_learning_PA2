@@ -1,0 +1,460 @@
+{
+  "gradient_summary": {
+    "before": {
+      "k_eff_10pct": 2,
+      "k_eff_1pct": 5,
+      "attenuation_at_train_window": 643.4506825107969,
+      "train_window": 8,
+      "decay_per_step": 0.5322525693239134
+    },
+    "after": {
+      "k_eff_10pct": 2,
+      "k_eff_1pct": 6,
+      "attenuation_at_train_window": 36193489.412559494,
+      "train_window": 32,
+      "decay_per_step": 0.5993735574118095
+    }
+  },
+  "tracker_results": [
+    {
+      "config": "naive",
+      "max_age": 30,
+      "mean_idf1": 0.5173815653143701,
+      "total_id_switches": 2827,
+      "total_fragmentations": 3604,
+      "id_count_ratio": 3.1560168840624354,
+      "recovery": null,
+      "per_sequence": [
+        {
+          "sequence": "02",
+          "idf1": 0.37313037723362014,
+          "id_switches": 427,
+          "fragmentations": 1001,
+          "predicted_identities": 258,
+          "ground_truth_identities": 62
+        },
+        {
+          "sequence": "04",
+          "idf1": 0.7068601178178899,
+          "id_switches": 743,
+          "fragmentations": 1037,
+          "predicted_identities": 130,
+          "ground_truth_identities": 83
+        },
+        {
+          "sequence": "05",
+          "idf1": 0.6056145155768572,
+          "id_switches": 152,
+          "fragmentations": 272,
+          "predicted_identities": 198,
+          "ground_truth_identities": 133
+        },
+        {
+          "sequence": "09",
+          "idf1": 0.515450067174205,
+          "id_switches": 103,
+          "fragmentations": 193,
+          "predicted_identities": 58,
+          "ground_truth_identities": 26
+        },
+        {
+          "sequence": "10",
+          "idf1": 0.4114605773373546,
+          "id_switches": 510,
+          "fragmentations": 487,
+          "predicted_identities": 297,
+          "ground_truth_identities": 57
+        },
+        {
+          "sequence": "11",
+          "idf1": 0.6224845087046327,
+          "id_switches": 122,
+          "fragmentations": 240,
+          "predicted_identities": 171,
+          "ground_truth_identities": 75
+        },
+        {
+          "sequence": "13",
+          "idf1": 0.3866707933560301,
+          "id_switches": 770,
+          "fragmentations": 374,
+          "predicted_identities": 567,
+          "ground_truth_identities": 110
+        }
+      ]
+    },
+    {
+      "config": "naive",
+      "max_age": 60,
+      "mean_idf1": 0.5165892583388706,
+      "total_id_switches": 3290,
+      "total_fragmentations": 3604,
+      "id_count_ratio": 2.81273710403593,
+      "recovery": null,
+      "per_sequence": [
+        {
+          "sequence": "02",
+          "idf1": 0.38828590337524815,
+          "id_switches": 475,
+          "fragmentations": 1001,
+          "predicted_identities": 202,
+          "ground_truth_identities": 62
+        },
+        {
+          "sequence": "04",
+          "idf1": 0.7144391844829825,
+          "id_switches": 1021,
+          "fragmentations": 1037,
+          "predicted_identities": 115,
+          "ground_truth_identities": 83
+        },
+        {
+          "sequence": "05",
+          "idf1": 0.577884286203355,
+          "id_switches": 174,
+          "fragmentations": 272,
+          "predicted_identities": 172,
+          "ground_truth_identities": 133
+        },
+        {
+          "sequence": "09",
+          "idf1": 0.5347066726377071,
+          "id_switches": 127,
+          "fragmentations": 193,
+          "predicted_identities": 51,
+          "ground_truth_identities": 26
+        },
+        {
+          "sequence": "10",
+          "idf1": 0.4057733735458854,
+          "id_switches": 542,
+          "fragmentations": 487,
+          "predicted_identities": 270,
+          "ground_truth_identities": 57
+        },
+        {
+          "sequence": "11",
+          "idf1": 0.6217763352021245,
+          "id_switches": 124,
+          "fragmentations": 240,
+          "predicted_identities": 167,
+          "ground_truth_identities": 75
+        },
+        {
+          "sequence": "13",
+          "idf1": 0.3732590529247911,
+          "id_switches": 827,
+          "fragmentations": 374,
+          "predicted_identities": 531,
+          "ground_truth_identities": 110
+        }
+      ]
+    },
+    {
+      "config": "lstm_before",
+      "max_age": 30,
+      "mean_idf1": 0.5244207368004701,
+      "total_id_switches": 2255,
+      "total_fragmentations": 3604,
+      "id_count_ratio": 3.5724733168484204,
+      "recovery": {
+        "n_tracked": 517,
+        "n_no_prior_track": 214,
+        "recovery_rate": 0.35009671179883944,
+        "expired": 33,
+        "stolen": 179,
+        "alive_not_matched": 124
+      },
+      "per_sequence": [
+        {
+          "sequence": "02",
+          "idf1": 0.3543348775645268,
+          "id_switches": 246,
+          "fragmentations": 1001,
+          "predicted_identities": 324,
+          "ground_truth_identities": 62
+        },
+        {
+          "sequence": "04",
+          "idf1": 0.6993282727519567,
+          "id_switches": 560,
+          "fragmentations": 1037,
+          "predicted_identities": 145,
+          "ground_truth_identities": 83
+        },
+        {
+          "sequence": "05",
+          "idf1": 0.624614857925368,
+          "id_switches": 150,
+          "fragmentations": 272,
+          "predicted_identities": 207,
+          "ground_truth_identities": 133
+        },
+        {
+          "sequence": "09",
+          "idf1": 0.5313479623824452,
+          "id_switches": 84,
+          "fragmentations": 193,
+          "predicted_identities": 68,
+          "ground_truth_identities": 26
+        },
+        {
+          "sequence": "10",
+          "idf1": 0.4287806979750108,
+          "id_switches": 431,
+          "fragmentations": 487,
+          "predicted_identities": 351,
+          "ground_truth_identities": 57
+        },
+        {
+          "sequence": "11",
+          "idf1": 0.6164650339333136,
+          "id_switches": 123,
+          "fragmentations": 240,
+          "predicted_identities": 179,
+          "ground_truth_identities": 75
+        },
+        {
+          "sequence": "13",
+          "idf1": 0.41607345507066956,
+          "id_switches": 661,
+          "fragmentations": 374,
+          "predicted_identities": 585,
+          "ground_truth_identities": 110
+        }
+      ]
+    },
+    {
+      "config": "lstm_before",
+      "max_age": 60,
+      "mean_idf1": 0.5220121277081309,
+      "total_id_switches": 2313,
+      "total_fragmentations": 3604,
+      "id_count_ratio": 3.3838638674896626,
+      "recovery": {
+        "n_tracked": 517,
+        "n_no_prior_track": 214,
+        "recovery_rate": 0.3520309477756286,
+        "expired": 15,
+        "stolen": 183,
+        "alive_not_matched": 137
+      },
+      "per_sequence": [
+        {
+          "sequence": "02",
+          "idf1": 0.3645268034414295,
+          "id_switches": 247,
+          "fragmentations": 1001,
+          "predicted_identities": 300,
+          "ground_truth_identities": 62
+        },
+        {
+          "sequence": "04",
+          "idf1": 0.7046170918578157,
+          "id_switches": 570,
+          "fragmentations": 1037,
+          "predicted_identities": 133,
+          "ground_truth_identities": 83
+        },
+        {
+          "sequence": "05",
+          "idf1": 0.6028757274905854,
+          "id_switches": 158,
+          "fragmentations": 272,
+          "predicted_identities": 192,
+          "ground_truth_identities": 133
+        },
+        {
+          "sequence": "09",
+          "idf1": 0.5270935960591133,
+          "id_switches": 91,
+          "fragmentations": 193,
+          "predicted_identities": 62,
+          "ground_truth_identities": 26
+        },
+        {
+          "sequence": "10",
+          "idf1": 0.4286083584661784,
+          "id_switches": 435,
+          "fragmentations": 487,
+          "predicted_identities": 338,
+          "ground_truth_identities": 57
+        },
+        {
+          "sequence": "11",
+          "idf1": 0.6165830628503983,
+          "id_switches": 123,
+          "fragmentations": 240,
+          "predicted_identities": 175,
+          "ground_truth_identities": 75
+        },
+        {
+          "sequence": "13",
+          "idf1": 0.4097802537913959,
+          "id_switches": 689,
+          "fragmentations": 374,
+          "predicted_identities": 567,
+          "ground_truth_identities": 110
+        }
+      ]
+    },
+    {
+      "config": "lstm_gap_aug",
+      "max_age": 30,
+      "mean_idf1": 0.5236996043169693,
+      "total_id_switches": 3086,
+      "total_fragmentations": 3604,
+      "id_count_ratio": 4.676685197920292,
+      "recovery": {
+        "n_tracked": 517,
+        "n_no_prior_track": 214,
+        "recovery_rate": 0.35589941972920697,
+        "expired": 35,
+        "stolen": 179,
+        "alive_not_matched": 119
+      },
+      "per_sequence": [
+        {
+          "sequence": "02",
+          "idf1": 0.35354070152217076,
+          "id_switches": 326,
+          "fragmentations": 1001,
+          "predicted_identities": 391,
+          "ground_truth_identities": 62
+        },
+        {
+          "sequence": "04",
+          "idf1": 0.7294792638152691,
+          "id_switches": 628,
+          "fragmentations": 1037,
+          "predicted_identities": 137,
+          "ground_truth_identities": 83
+        },
+        {
+          "sequence": "05",
+          "idf1": 0.6110920917494009,
+          "id_switches": 152,
+          "fragmentations": 272,
+          "predicted_identities": 210,
+          "ground_truth_identities": 133
+        },
+        {
+          "sequence": "09",
+          "idf1": 0.5167935512763099,
+          "id_switches": 115,
+          "fragmentations": 193,
+          "predicted_identities": 61,
+          "ground_truth_identities": 26
+        },
+        {
+          "sequence": "10",
+          "idf1": 0.4174924601464886,
+          "id_switches": 657,
+          "fragmentations": 487,
+          "predicted_identities": 548,
+          "ground_truth_identities": 57
+        },
+        {
+          "sequence": "11",
+          "idf1": 0.6247270581292417,
+          "id_switches": 143,
+          "fragmentations": 240,
+          "predicted_identities": 181,
+          "ground_truth_identities": 75
+        },
+        {
+          "sequence": "13",
+          "idf1": 0.412772103579903,
+          "id_switches": 1065,
+          "fragmentations": 374,
+          "predicted_identities": 971,
+          "ground_truth_identities": 110
+        }
+      ]
+    },
+    {
+      "config": "lstm_gap_aug",
+      "max_age": 60,
+      "mean_idf1": 0.5200112809336997,
+      "total_id_switches": 3165,
+      "total_fragmentations": 3604,
+      "id_count_ratio": 4.328247967717239,
+      "recovery": {
+        "n_tracked": 517,
+        "n_no_prior_track": 214,
+        "recovery_rate": 0.35589941972920697,
+        "expired": 19,
+        "stolen": 179,
+        "alive_not_matched": 135
+      },
+      "per_sequence": [
+        {
+          "sequence": "02",
+          "idf1": 0.3467240238252813,
+          "id_switches": 352,
+          "fragmentations": 1001,
+          "predicted_identities": 354,
+          "ground_truth_identities": 62
+        },
+        {
+          "sequence": "04",
+          "idf1": 0.7304000849988785,
+          "id_switches": 641,
+          "fragmentations": 1037,
+          "predicted_identities": 130,
+          "ground_truth_identities": 83
+        },
+        {
+          "sequence": "05",
+          "idf1": 0.5801095515234509,
+          "id_switches": 177,
+          "fragmentations": 272,
+          "predicted_identities": 192,
+          "ground_truth_identities": 133
+        },
+        {
+          "sequence": "09",
+          "idf1": 0.5089565606806986,
+          "id_switches": 139,
+          "fragmentations": 193,
+          "predicted_identities": 56,
+          "ground_truth_identities": 26
+        },
+        {
+          "sequence": "10",
+          "idf1": 0.42507539853511417,
+          "id_switches": 643,
+          "fragmentations": 487,
+          "predicted_identities": 491,
+          "ground_truth_identities": 57
+        },
+        {
+          "sequence": "11",
+          "idf1": 0.6342874004131012,
+          "id_switches": 140,
+          "fragmentations": 240,
+          "predicted_identities": 176,
+          "ground_truth_identities": 75
+        },
+        {
+          "sequence": "13",
+          "idf1": 0.41452594655937275,
+          "id_switches": 1073,
+          "fragmentations": 374,
+          "predicted_identities": 931,
+          "ground_truth_identities": 110
+        }
+      ]
+    }
+  ],
+  "evaluated_sequences": [
+    "02",
+    "04",
+    "05",
+    "09",
+    "10",
+    "11",
+    "13"
+  ],
+  "holdout": []
+}
