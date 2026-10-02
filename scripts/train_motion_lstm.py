@@ -3,7 +3,7 @@ from pathlib import Path
 
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader, random_split
+from torch.utils.data import DataLoader
 
 from src.datasets.mot17 import MOT17Sequence, SEQUENCE_IDS
 from src.datasets.trajectory_dataset import extract_trajectories, TrajectoryWindowDataset
@@ -16,18 +16,31 @@ print(f"Device: {device}")
 
 root = Path("data/raw/MOT17/train")
 DETECTOR = "SDP"
+HELD_OUT_SEQ = "09"  # nunca entra no treino -- reservada para validação e para a Parte 5
 
-sequences_info = []
-for seq_id in SEQUENCE_IDS:
-    seq = MOT17Sequence(root / f"MOT17-{seq_id}-{DETECTOR}", load_gt=True)
-    if seq.gt is not None:
-        sequences_info.append((seq.info.name, seq.gt, seq.info.im_width, seq.info.im_height))
+TRAIN_SEQ_IDS = [s for s in SEQUENCE_IDS if s != HELD_OUT_SEQ]
+print(f"Treino: {TRAIN_SEQ_IDS}")
+print(f"Held-out: {HELD_OUT_SEQ}")
 
-trajectories = extract_trajectories(sequences_info)
-dataset = TrajectoryWindowDataset(trajectories, window_size=8)
+def load_sequences_info(seq_ids):
+    info = []
+    for seq_id in seq_ids:
+        seq = MOT17Sequence(root / f"MOT17-{seq_id}-{DETECTOR}", load_gt=True)
+        if seq.gt is not None:
+            info.append((seq.info.name, seq.gt, seq.info.im_width, seq.info.im_height))
+    return info
 
-n_val = int(0.1 * len(dataset))
-train_set, val_set = random_split(dataset, [len(dataset) - n_val, n_val])
+train_sequences_info = load_sequences_info(TRAIN_SEQ_IDS)
+val_sequences_info = load_sequences_info([HELD_OUT_SEQ])
+
+train_trajectories = extract_trajectories(train_sequences_info)
+val_trajectories = extract_trajectories(val_sequences_info)
+
+train_set = TrajectoryWindowDataset(train_trajectories, window_size=8)
+val_set = TrajectoryWindowDataset(val_trajectories, window_size=8)
+
+print(f"Janelas de treino: {len(train_set)}, janelas de validação (held-out): {len(val_set)}")
+
 train_loader = DataLoader(train_set, batch_size=128, shuffle=True)
 val_loader = DataLoader(val_set, batch_size=128)
 
@@ -54,7 +67,7 @@ for epoch in range(n_epochs):
     with torch.no_grad():
         for inputs, targets in val_loader:
             inputs, targets = inputs.to(device), targets.to(device)
-            pred_position, pred_delta, _ = model(inputs)  # <- corrigido aqui
+            pred_position, pred_delta, _ = model(inputs)
             val_loss += criterion(pred_position, targets).item() * inputs.size(0)
     val_loss /= len(val_set)
 
