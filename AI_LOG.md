@@ -5,17 +5,6 @@
 
 **Em uma frase:** usamos a IA como par para discutir conceitos, depurar e produzir código de apoio (gráficos, scripts de análise, documentação).
 
-## Onde usamos e onde não usamos
-
-| Tarefa | IA? | Nosso papel |
-|---|---|---|
-| Escolhas de projeto (Trilha A, Eixo 2, Parte 5, detector SDP, MOT17-09 como held-out, eixo de densidade) | Não | Decidimos com base em experimentos (`compare_detectors.py`, correlação densidade × razão de contagem) |
-| Modelo (LSTM residual), perda, associação, nascimento e morte de tracks | Discussão de alternativas | Escrevemos e testamos o código |
-| IDF1, ID switches, fragmentações | Explicação do Húngaro e das definições | Escrevemos a métrica e os casos de teste à mão |
-| Gerador sintético com oclusão, simulador de detector | Sugestão de abordagem | Escrevemos, calibramos e verificamos com figuras |
-| Figuras (matplotlib), estilo, scripts de análise | Sim, bastante | Revisamos e ajustamos os resultados |
-| Interpretação dos resultados e diagnósticos da Parte 4 | Não | É a base da apresentação |
-| README, `metrics.py` consolidado, `inferencia.ipynb` | Sim (ver episódio 6) | Revisamos e executamos |
 
 ## Exemplos de episódios de uso:
 

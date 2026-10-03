@@ -37,8 +37,6 @@ Um LSTM por track como **modelo de movimento** (Trilha A) sobre as detecções p
 Python ≥ 3.11. Usamos [uv](https://docs.astral.sh/uv/); os extras `cpu` e `gpu` são mutuamente exclusivos.
 
 ```bash
-git clone <URL-DO-REPOSITORIO> && cd <REPOSITORIO>
-
 uv sync --extra cpu          # só CPU
 # uv sync --extra gpu        # GPU (CUDA 13.0, índice pytorch-cu130)
 
@@ -140,10 +138,3 @@ Dependências entre etapas: Parte 2 → `outputs/motion_lstm.pt`; Parte 3 → `o
 ## Checkpoint
 
 `outputs/motion_lstm.pt` é o modelo da Trilha A (LSTM 4→64 + cabeça linear, ≈ 18 mil parâmetros, < 100 KB). Ele está **versionado no repositório** (exceção no `.gitignore`), então o notebook roda logo após o `git clone`. Os checkpoints da ablação (`outputs/ablation_checkpoints/{regime}_seed{0,1,2}.pt`) são regenerados por `scripts.train_motion_lstm_ablation`.
-
-## Limitações conhecidas
-
-- **Split da ablação (Parte 3).** `train_motion_lstm_ablation.py` treina nas 7 sequências (inclusive a 09) e valida em 10 % de janelas sorteadas. Portanto, o IDF1 de `run_part3_eixo2_tracking` é medido em sequências vistas no treino. Só `motion_lstm.pt` respeita a reserva da MOT17-09. O mesmo vale para `run_part4_correction`, a menos que se use `--holdout`.
-- **Protocolo do tracker.** Os scripts usam o protocolo atual (`legacy_state_update=False`). O modo legado só existe para reproduzir números antigos.
-- **Seeds.** O treino de `motion_lstm.pt` não fixa seed, por isso o checkpoint é versionado. A ablação e a degradação da Parte 5 usam as seeds 0, 1 e 2.
-- **Resultados.** Nenhum número é fixado neste README. Todas as tabelas, curvas e imagens da apresentação saem dos comandos da seção 5.
